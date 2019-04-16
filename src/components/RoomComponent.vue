@@ -1,6 +1,6 @@
 <template>
   <p>
-    ChatComponent
+    RoomComponent  
   </p>
 </template>
 
