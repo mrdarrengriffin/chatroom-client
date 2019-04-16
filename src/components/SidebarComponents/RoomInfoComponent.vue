@@ -3,7 +3,7 @@
     <h5 class="my-2 text-center">{{roomInfo.name}}</h5>
     <hr class="m-0"/>
     <div name="userGroup">
-      <div v-for="(value, key) in roomInfo.users" class="userItem py-2 pl-2 border-bottom">
+      <div v-for="(value, key) in roomInfo.users" class="userItem py-2 pl-2 border-bottom" v-bind:key="value.id">
         <div class="userIcon">
           <b-img class="rounded-circle img-fluid" :src="'https://api.adorable.io/avatars/30/' + value.username + '.png'"></b-img>
         </div>

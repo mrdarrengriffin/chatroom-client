@@ -26,15 +26,10 @@ export default {
       this.inRoom = true
     },
     userJoinedRoom: function(data) {
-      var newUsers = this.roomInfo.users
-      newUsers[data.id] = data;
-      this.roomInfo.users = []
-      this.roomInfo.users = newUsers;
+      this.$set(this.roomInfo.users, data.id, data)
     },
     userLeftRoom: function(userId) {
-      console.log(this.roomInfo.users)
-      delete this.roomInfo.users[userId]
-      console.log(this.roomInfo.users)
+      this.$delete(this.roomInfo.users, userId)
     }
   },
 }
