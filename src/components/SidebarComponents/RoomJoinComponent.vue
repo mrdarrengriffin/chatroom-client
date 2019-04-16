@@ -26,11 +26,6 @@ export default {
   props: {
     data: Object
   },
-  sockets: {
-    joinRoomInit: (data) => {
-      alert(1)
-    }
-  },
   methods: {
     joinRoom: function() {
       this.$socket.emit('joinRoom', this.form);
