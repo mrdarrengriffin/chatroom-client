@@ -1,7 +1,12 @@
 <template>
-  <p>
-    ChatComponent
-  </p>
+  <div>
+    <div v-if="!data.self" class="message">
+      {{data.message}}
+    </div>
+    <div v-else class="selfmessage">
+      {{data.message}}
+    </div>
+  </div>
 </template>
 
 <script>
@@ -13,4 +18,7 @@ export default {
 </script>
 
 <style>
+  .selfmessage {
+    text-align: right;
+  }
 </style>

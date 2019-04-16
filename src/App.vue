@@ -5,10 +5,10 @@
         <RoomComponent/>
       </div>
       <div class="col" style="height: 100vh">
-        <ChatComponent/>
-        <ChatComponent/>
-        <ChatComponent/>
-        <ChatComponent/>
+        <ChatComponent :data="{username:'Darren', message:'Hi mate', self:false}"/>
+        <ChatComponent :data="{username:'james090500', message:'Hey!', self:true}"/>
+        <ChatComponent :data="{username:'Darren', message:'You good?', self:false}"/>
+        <ChatComponent :data="{username:'james090500', message:'Yeh', self:true}"/>
         <MessageComponent/>
       </div>
     </div>
