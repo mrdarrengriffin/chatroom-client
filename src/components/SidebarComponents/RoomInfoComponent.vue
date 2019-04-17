@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h5 class="my-2 text-center">{{roomInfo.name}}</h5>
+    <h5 class="py-2 text-center">{{roomInfo.name}}</h5>
     <hr class="m-0"/>
     <div name="userGroup">
       <div v-for="(value, key) in roomInfo.users" class="userItem py-2 pl-2 border-bottom" v-bind:key="value.id">
@@ -18,7 +18,7 @@
 <script>
 export default {
   data() {
-    return {      
+    return {
       roomInfo: this.$parent.$parent.roomInfo
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 pt-4">
+  <div id="chatcomponent" class="px-4 pt-4">
     <MessageComponent v-for="(value, key) in messages" :data='value'/>
   </div>
 </template>
@@ -29,6 +29,11 @@ export default {
 </script>
 
 <style>
+  #chatcomponent {
+    overflow-y: scroll;
+    height: 95vh;
+  }
+
   .selfmessage {
     text-align: right;
   }

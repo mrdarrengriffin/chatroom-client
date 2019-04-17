@@ -1,5 +1,5 @@
 <template>
-  <div class="h-100">
+  <div style="height:100vh;">
     <RoomJoinComponent v-if="!this.inRoom"/>
     <RoomInfoComponent v-else/>
   </div>

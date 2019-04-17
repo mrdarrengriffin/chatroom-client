@@ -1,7 +1,7 @@
 <template>
   <div id="messagecomponent" class="border-top">
     <div class="d-flex">
-      <b-form-input v-model="message" placeholder="Start typing..." class="border-0 col-11 mr-1" v-on:keyup.enter="sendMessage()"></b-form-input>
+      <b-form-input v-model="message" placeholder="Start typing..." class="border-0 col-11 mr-1" v-on:keyup.enter="sendMessage()" autocomplete="off"></b-form-input>
       <b-button v-on:click="sendMessage()" class="mx-auto" variant="link"><font-awesome-icon class="fa-2x" :icon="['far', 'paper-plane']" /></b-button>
     </div>
   </div>
