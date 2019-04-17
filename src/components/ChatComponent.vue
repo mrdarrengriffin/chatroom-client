@@ -1,9 +1,6 @@
 <template>
   <div class="px-4 pt-4">
-    <MessageComponent :data="{username:'Darren', message:'Hi mate', self:false}"/>
-    <MessageComponent :data="{username:'james090500', message:'Hey!', self:true}"/>
-    <MessageComponent :data="{username:'Darren', message:'You good?', self:false}"/>
-    <MessageComponent :data="{username:'james090500', message:'Yeh', self:true}"/>
+    <MessageComponent v-for="(value, key) in messages" :data='value'/>
   </div>
 </template>
 
@@ -11,11 +8,22 @@
 import MessageComponent from './MessageComponent.vue'
 
 export default {
+  data() {
+    return {
+      messages: []
+    }
+  },
   components: {
     MessageComponent
   },
-  props: {
-    data: Object
+  sockets: {
+    receiveMessage: function(data) {
+      data['username'] = this.$parent.roomInfo.users[data.user].username;
+      if(this.$socket.id == data.user) {
+        data['self'] = true;
+      }
+      this.$set(this.messages, this.messages.length+1, data)
+    }
   }
 }
 </script>

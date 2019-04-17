@@ -19,6 +19,11 @@ import SendMessageComponent from './components/SendMessageComponent.vue'
 
 export default {
   name: 'app',
+  data() {
+    return {
+      roomInfo: null
+    }
+  },
   components: {
     SidebarComponent,
     ChatComponent,

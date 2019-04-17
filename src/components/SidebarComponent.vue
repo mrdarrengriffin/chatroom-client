@@ -22,14 +22,14 @@ export default {
   },
   sockets: {
     joinRoomInit: function(data) {
-      this.roomInfo = data;
+      this.$parent.roomInfo = data;
       this.inRoom = true
     },
     userJoinedRoom: function(data) {
-      this.$set(this.roomInfo.users, data.id, data)
+      this.$set(this.$parent.roomInfo.users, data.id, data)
     },
     userLeftRoom: function(userId) {
-      this.$delete(this.roomInfo.users, userId)
+      this.$delete(this.$parent.roomInfo.users, userId)
     }
   },
 }

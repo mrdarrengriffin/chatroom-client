@@ -18,8 +18,8 @@
 <script>
 export default {
   data() {
-    return {
-      roomInfo: this.$parent.roomInfo
+    return {      
+      roomInfo: this.$parent.$parent.roomInfo
     }
   }
 }

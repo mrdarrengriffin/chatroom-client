@@ -27,7 +27,7 @@ export default {
     data: Object
   },
   methods: {
-    joinRoom: function() {
+    joinRoom: function() {      
       this.$socket.emit('joinRoom', this.form);
     }
   }

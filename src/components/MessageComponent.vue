@@ -14,6 +14,9 @@
     <div class="selfMessage">
       {{data.message}}
     </div>
+    <div class="selfName">
+      <small>You</small>
+    </div>
     <div class="selfIcon">
       <b-img class="rounded-circle img-fluid" :src="'https://api.adorable.io/avatars/40/' + data.username + '.png'"></b-img>
     </div>
@@ -35,6 +38,7 @@ export default {
 
   .userMessageBox, .selfMessageBox {
     display: flex;
+    margin-bottom: 1.5vh;
   }
 
   .userMessageBox > .userName {
@@ -49,6 +53,13 @@ export default {
     padding: 1vh;
     background: #efefef;
     border-radius: 100px;
+  }
+
+  .selfMessageBox > .selfName {
+    transform: translateY(-20px);
+    right: 86px;
+    position: absolute;
+    color: #b3b3b3;
   }
 
   .selfMessageBox > .selfMessage {
