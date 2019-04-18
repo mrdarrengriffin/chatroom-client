@@ -1,7 +1,9 @@
 <template>
-  <div class="loading" v-if="loading">
-    <h1 class="verticle">{{status}}</h1>
-  </div>
+  <transition name="fade" mode="out-in">
+    <div class="loading" v-if="loading">
+      <h1 class="verticle">{{status}}</h1>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -51,5 +53,13 @@ export default {
     position: absolute;
     top: 0;
     height: 100vh;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity 1.3s ease;
+  }
+  
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
   }
 </style>

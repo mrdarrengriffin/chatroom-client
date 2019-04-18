@@ -1,20 +1,20 @@
 <template>
-  <div v-if="!data.self" class="userMessageBox">
+  <div v-if="!messageObject.self" class="userMessageBox">
     <div class="messageContainer">
       <div class="userIcon">
-        <b-img class="rounded-circle img-fluid" :src="'https://api.adorable.io/avatars/40/' + data.username + '.png'"></b-img>
+        <b-img class="rounded-circle img-fluid" :src="'https://api.adorable.io/avatars/40/' + messageObject.username + '.png'"></b-img>
       </div>
       <div class="userName">
-        <small>{{data.username}}</small>
+        <small>{{messageObject.username}}</small>
       </div>
-      <div class="userMessage">
-        {{data.message}}
+      <div class="userMessage" v-for="message in messageObject.messages">
+        {{message}}
       </div>
     </div>
   </div>
   <div v-else class="selfMessageBox">
-    <div class="selfMessage">
-      {{data.message}}
+    <div class="selfMessage" v-for="message in messageObject.messages">
+      {{message}}
     </div>
   </div>
 </template>
@@ -22,13 +22,13 @@
 <script>
 export default {
   props: {
-    data: Object
+    messageObject: Object
   }
 }
 </script>
 
 <style>
-  .userMessageBox, .selfMessageBox {
+  .userMessageBox {
     display: flex;
     margin-bottom: 1vh;
   }
@@ -41,7 +41,8 @@ export default {
 
   .messageContainer > .userIcon {
     position: absolute;
-    margin-top: 2.7vh;
+    bottom: 0;
+    width: 33px;
   }
 
   .messageContainer > .userName {
@@ -51,11 +52,22 @@ export default {
   }
 
   .messageContainer > .userMessage {
-    padding: 1vh;
+    padding: 0.5vh 1vh;
     background: #efefef;
     border-radius: 1.3em;
-    margin-top: 2.5vh;
-    margin-left: 5vh;
+    margin-left: 2vw;
+    margin-top: 2vh;
+    display: table;
+  }
+
+  .messageContainer > .userMessage ~ .userMessage {
+    margin-top: 0.5vh;
+  }
+
+  .selfMessageBox {
+    max-width: 40%;
+    margin-left: auto;
+    display: grid;
   }
 
   .selfMessageBox > .selfName {
@@ -63,12 +75,16 @@ export default {
   }
 
   .selfMessageBox > .selfMessage {
-    max-width: 40%;
     color: white;
     margin-left: auto;
     margin-right: 1vh;
-    padding: 0.5vh 2vh;
+    padding: 0.5vh 1vh;
     background: #0084ff;
     border-radius: 1.3em;
+    margin-top: 2vh;
+  }
+
+  .selfMessageBox > .selfMessage ~ .selfMessage {
+    margin-top: 0.5vh;
   }
 </style>
