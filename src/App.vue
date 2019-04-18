@@ -15,9 +15,9 @@
 
 <script>
 import LoadingScreen from './components/LoadingScreen.vue'
-import SidebarComponent from './components/SidebarComponent.vue'
-import ChatComponent from './components/ChatComponent.vue'
-import SendMessageComponent from './components/SendMessageComponent.vue'
+import SidebarComponent from './components/SidebarComponents/SidebarComponent.vue'
+import ChatComponent from './components/ChatComponents/ChatComponent.vue'
+import SendMessageComponent from './components/ChatComponents/SendMessageComponent.vue'
 
 export default {
   name: 'app',

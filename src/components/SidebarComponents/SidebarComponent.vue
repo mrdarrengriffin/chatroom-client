@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import RoomJoinComponent from './SidebarComponents/RoomJoinComponent.vue'
-import RoomInfoComponent from './SidebarComponents/RoomInfoComponent.vue'
+import RoomJoinComponent from './RoomJoinComponent.vue'
+import RoomInfoComponent from './RoomInfoComponent.vue'
 
 export default {
   data() {

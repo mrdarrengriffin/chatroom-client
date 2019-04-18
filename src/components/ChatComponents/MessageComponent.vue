@@ -1,9 +1,9 @@
 <template>
   <div v-if="!data.self" class="userMessageBox">
-    <div class="userIcon">
-      <b-img class="rounded-circle img-fluid" :src="'https://api.adorable.io/avatars/40/' + data.username + '.png'"></b-img>
-    </div>
     <div class="messageContainer">
+      <div class="userIcon">
+        <b-img class="rounded-circle img-fluid" :src="'https://api.adorable.io/avatars/40/' + data.username + '.png'"></b-img>
+      </div>
       <div class="userName">
         <small>{{data.username}}</small>
       </div>
@@ -30,27 +30,32 @@ export default {
 <style>
   .userMessageBox, .selfMessageBox {
     display: flex;
-    margin-bottom: 1.5vh;
-  }
-
-  .userMessageBox > .userIcon {
-    margin-top: 2.7vh;
+    margin-bottom: 1vh;
   }
 
   .messageContainer {
-    margin-left: 1vh;
+    position: relative;
     display: block;
+    max-width: 40%;
+  }
+
+  .messageContainer > .userIcon {
+    position: absolute;
+    margin-top: 2.7vh;
   }
 
   .messageContainer > .userName {
+    position: absolute;
     color: #b3b3b3;
+    margin-left: 5.5vh;
   }
 
   .messageContainer > .userMessage {
-    max-width: 40%;
     padding: 1vh;
     background: #efefef;
-    border-radius: 100px;
+    border-radius: 1.3em;
+    margin-top: 2.5vh;
+    margin-left: 5vh;
   }
 
   .selfMessageBox > .selfName {
@@ -64,6 +69,6 @@ export default {
     margin-right: 1vh;
     padding: 0.5vh 2vh;
     background: #0084ff;
-    border-radius: 100px;
+    border-radius: 1.3em;
   }
 </style>
