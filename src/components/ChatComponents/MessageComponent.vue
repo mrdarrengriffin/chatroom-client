@@ -46,6 +46,7 @@ export default {
   }
 
   .messageContainer > .userName {
+    white-space: nowrap;
     position: absolute;
     color: #b3b3b3;
     margin-left: 5.5vh;
